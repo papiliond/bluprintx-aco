@@ -1,0 +1,38 @@
+
+    {
+        "meshConfig": {
+            "responseConfig": {
+                "CORS": {
+                    "credentials": true,
+                    "exposedHeaders": ["Content-Range", "X-Content-Range"],
+                    "maxAge": 60480,
+                    "methods": ["GET", "POST"],
+                    "origin": "*"
+                },
+                "headers": {
+                    "mode": "no-cors",
+                    "x-include-metadata": "true"
+                },
+                "includeHTTPDetails": false
+            },
+            "sources": [
+                {
+                    "name": "CommerceSaaSGraphQl",
+                    "handler": {
+                         "graphql": {
+                            "endpoint": "https://edge-sandbox-graph.adobe.io/api/1b898b15-465f-4056-8099-285471cd4cc3/graphql",
+                            "operationHeaders": {
+                                "x-api-key": "{env.COMMERCE_API_KEY}",
+                                "Magento-Environment-Id": "{env.MAGENTO_ENVIRONMENT_ID}",
+                                "Content-Type": "application/json"
+                            }
+                        }
+                    },
+                    "responseConfig": {
+                        "headers": ["X-Magento-Cache-Id"]
+                    }
+                }
+            ]
+        }
+    }
+    
