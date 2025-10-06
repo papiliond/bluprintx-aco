@@ -22,8 +22,8 @@
                          "graphql": {
                             "endpoint": "https://edge-sandbox-graph.adobe.io/api/1b898b15-465f-4056-8099-285471cd4cc3/graphql",
                             "operationHeaders": {
-                                "x-api-key": "{env.COMMERCE_API_KEY}",
-                                "Magento-Environment-Id": "{env.MAGENTO_ENVIRONMENT_ID}",
+                                "x-api-key": "{context.headers['x-api-key']}",
+                                "Magento-Environment-Id": "{context.headers['magento-environment-id']}",
                                 "Content-Type": "application/json"
                             }
                         }
