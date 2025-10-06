@@ -19,12 +19,18 @@
                 {
                     "name": "CommerceSaaSGraphQl",
                     "handler": {
-                         "graphql": {
-                            "endpoint": "https://edge-sandbox-graph.adobe.io/api/1b898b15-465f-4056-8099-285471cd4cc3/graphql",
+                        "graphql": {
+                            "endpoint": "https://na1-sandbox.api.commerce.adobe.com/VofEvVSTqApWgHt4qH5NNV/graphql",
+                            "useGETForQueries": true,
                             "operationHeaders": {
-                                "x-api-key": "{context.headers['x-api-key']}",
+                                "Content-Type": "application/json",
                                 "Magento-Environment-Id": "{context.headers['magento-environment-id']}",
-                                "Content-Type": "application/json"
+                                "Magento-Website-Code": "{context.headers['magento-website-code']}",
+                                "Magento-Store-View-Code": "{context.headers['magento-store-view-code']}",
+                                "Magento-Store-Code": "{context.headers['magento-store-code']}",
+                                "Magento-Customer-Group": "{context.headers['magento-customer-group']}",
+                                "x-api-key": "{context.headers['x-api-key']}",
+                                "Authorization": "{context.headers['Authorization']}"
                             }
                         }
                     },
