@@ -83,6 +83,7 @@ export default async function decorate(block) {
   const storeCode = await getConfigValue('commerce.headers.cs.Magento-Store-Code');
   const storeViewCode = await getConfigValue('commerce.headers.cs.Magento-Store-View-Code');
   const customerGroup = await getConfigValue('commerce.headers.cs.Magento-Customer-Group');
+  const priceBookId = await getConfigValue('commerce.headers.cs.AC-Price-Book-ID');
   const configHeaders = await getHeaders('cs');
 
   // Store Config

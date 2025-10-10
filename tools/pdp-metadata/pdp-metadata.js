@@ -23,6 +23,7 @@ async function performCatalogServiceQuery(config, query, variables) {
     'Magento-Store-Code': config['commerce.headers.cs.Magento-Store-Code'],
     'Magento-Store-View-Code': config['commerce.headers.cs.Magento-Store-View-Code'],
     'Magento-Website-Code': config['commerce.headers.cs.Magento-Website-Code'],
+    'AC-Price-Book-ID': config['commerce.headers.cs.AC-Price-Book-ID'],
   };
 
   const apiCall = await commerceEndpointWithQueryParams(config);
