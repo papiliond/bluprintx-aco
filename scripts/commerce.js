@@ -273,38 +273,13 @@ export function mapProductAcdl(product) {
   };
 }
 
-async function fetchCategoryTree() {
-  const query = `
-    query categoryTree {
-      categories {
-        items {
-          name
-          url: url_key
-          id
-          children {
-            name
-            url: url_key
-            id
-            children {
-              name
-              url: url_key
-              id
-              children {
-                name
-                url: url_key
-                id
-              }
-            }
-          }
-        }
-      }
+window.categoryData = window.categoryData || fetch(`${window.origin}/data/data.json`)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`Network response was not ok ${response.statusText}`);
     }
-  `;
-  const categoryData = await performCatalogServiceQuery(query);
-  return { data: categoryData };
-}
-
-window.categoryData = window.categoryData || fetchCategoryTree();
+    return response.json();
+  });
 
 export function getProperty(items, propertyName, searchCriteria) {
   const stack = [...items];
