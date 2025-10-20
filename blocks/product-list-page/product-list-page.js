@@ -97,6 +97,7 @@ export default async function decorate(block) {
     storeCode,
     storeViewCode,
     customerGroup,
+    priceBookId,
     route: ({ sku, urlKey }) => `/products/${urlKey}/${sku}`,
     defaultHeaders: {
       'Content-Type': 'application/json',
